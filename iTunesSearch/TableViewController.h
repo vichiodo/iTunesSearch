@@ -12,7 +12,9 @@
 
 
 @property (strong, nonatomic) IBOutlet UITableView *tableview;
-@property (weak, nonatomic) IBOutlet UITextField *termoPesquisa;
+@property (nonatomic) UIButton* botao;
+@property (nonatomic) UITextField* termo;
+@property (nonatomic) NSString *texto;
 
 @end
 

@@ -18,7 +18,7 @@
 @end
 
 @implementation TableViewController
-
+@synthesize termo, botao;
 
 
 - (void)viewDidLoad {
@@ -28,10 +28,24 @@
     [self.tableview registerNib:nib forCellReuseIdentifier:@"celulaPadrao"];
     
     iTunesManager *itunes = [iTunesManager sharedInstance];
-    midias = [itunes buscarMidias:@"Apple"];
+    
     
 #warning Necessario para que a table view tenha um espaco em relacao ao topo, pois caso contrario o texto ficara atras da barra superior
-    self.tableview.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableview.bounds.size.width, 15.f)];
+    self.tableview.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableview.bounds.size.width, 50.f)];
+    termo = [[UITextField alloc] initWithFrame:CGRectMake(10.0f, 25.0f, 180.0f, 25.0f)];
+    [termo setBorderStyle:UITextBorderStyleRoundedRect];
+    
+    
+    
+    
+    botao = [[UIButton alloc] initWithFrame:CGRectMake(220.0f, 25.0f, 60.0f, 25.0f)];
+    [botao setTitle:@"Procurar" forState:UIControlStateNormal];
+    [botao setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+    [botao setFont:[UIFont boldSystemFontOfSize:12.0f]];
+    [botao addTarget:self action:@selector(search:) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.tableview.tableHeaderView addSubview:termo];
+    [self.tableview.tableHeaderView addSubview:botao];
 }
 
 - (void)didReceiveMemoryWarning {
@@ -63,6 +77,24 @@
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
     return 70;
+}
+
+
+-(IBAction)search:(id)sender{
+    iTunesManager *itunes = [iTunesManager sharedInstance];
+    _texto = termo.text;
+    
+    
+    _texto = [_texto stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    
+    midias = [itunes buscarMidias:_texto];
+    
+    [self.tableview reloadData];
+    
+    [termo resignFirstResponder];
+    
+    
+
 }
 
 
