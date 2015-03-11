@@ -58,9 +58,9 @@
 		B3CE39C01AB0BD4B005E1FFB /* Ebook.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Ebook.h; path = Entidades/Ebook.h; sourceTree = "<group>"; };
 		B3CE39C11AB0BD4B005E1FFB /* Ebook.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = Ebook.m; path = Entidades/Ebook.m; sourceTree = "<group>"; };
 		B3CE39C41AB0D0FB005E1FFB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/TableView.xib; sourceTree = "<group>"; };
-		B3CE39C71AB0D0FE005E1FFB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TableView.strings; sourceTree = "<group>"; };
-		B3CE39C81AB0D109005E1FFB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/TableView.strings; sourceTree = "<group>"; };
-		B3CE39C91AB0D111005E1FFB /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/TableView.strings; sourceTree = "<group>"; };
+		B3CE39CA1AB0F040005E1FFB /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/TableView.strings; sourceTree = "<group>"; };
+		B3CE39CB1AB0F045005E1FFB /* fr */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = fr; path = fr.lproj/TableView.strings; sourceTree = "<group>"; };
+		B3CE39CC1AB0F049005E1FFB /* pt */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = pt; path = pt.lproj/TableView.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,7 +229,6 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
 			);
 			mainGroup = 92C21CA71AAE757A0052ABE6;
@@ -303,9 +302,9 @@
 			isa = PBXVariantGroup;
 			children = (
 				B3CE39C41AB0D0FB005E1FFB /* Base */,
-				B3CE39C71AB0D0FE005E1FFB /* en */,
-				B3CE39C81AB0D109005E1FFB /* fr */,
-				B3CE39C91AB0D111005E1FFB /* pt */,
+				B3CE39CA1AB0F040005E1FFB /* en */,
+				B3CE39CB1AB0F045005E1FFB /* fr */,
+				B3CE39CC1AB0F049005E1FFB /* pt */,
 			);
 			name = TableView.xib;
 			sourceTree = "<group>";

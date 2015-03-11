@@ -22,7 +22,7 @@
 @end
 
 @implementation TableViewController
-@synthesize termo, botao, tipo;
+@synthesize termo, procurar;
 
 
 - (void)viewDidLoad {
@@ -33,26 +33,29 @@
     [self.tableview registerNib:nib forCellReuseIdentifier:@"celulaPadrao"];
     
 #warning Necessario para que a table view tenha um espaco em relacao ao topo, pois caso contrario o texto ficara atras da barra superior
-    self.tableview.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableview.bounds.size.width, 50.0f)];
-    
-    
-    termo = [[UITextField alloc] initWithFrame:CGRectMake(10.0f, 25.0f, 180.0f, 25.0f)];
-    [termo setBorderStyle:UITextBorderStyleRoundedRect];
-    
+//    self.tableview.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableview.bounds.size.width, 100.0f)];
+//    
+//    
+//    [self.tableview.tableHeaderView addSubview:termo];
+//
+//    
+//    termo = [[UITextField alloc] initWithFrame:CGRectMake(10.0f, 25.0f, 180.0f, 25.0f)];
+//    [termo setBorderStyle:UITextBorderStyleRoundedRect];
+//    
     
 //    tipo = [[UITableView alloc] initWithFrame:CGRectMake(10.0f, 70.0f, 150.0f, 25.0f)];
 //    [tipo setBackgroundColor:[UIColor brownColor]];
 //    tipos = @[@"movie", @"music"];
     
-    
-    botao = [[UIButton alloc] initWithFrame:CGRectMake(220.0f, 25.0f, 60.0f, 25.0f)];
-    [botao setTitle:@"Procurar" forState:UIControlStateNormal];
-    [botao setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
-    [botao setFont:[UIFont boldSystemFontOfSize:12.0f]];
-    [botao addTarget:self action:@selector(search:) forControlEvents:UIControlEventTouchUpInside];
-    
-    [self.tableview.tableHeaderView addSubview:termo];
-    [self.tableview.tableHeaderView addSubview:botao];
+//    
+//    botao = [[UIButton alloc] initWithFrame:CGRectMake(220.0f, 25.0f, 60.0f, 25.0f)];
+//    [botao setTitle:@"Procurar" forState:UIControlStateNormal];
+//    [botao setTitleColor:[UIColor blackColor] forState:UIControlStateNormal];
+//    [botao setFont:[UIFont boldSystemFontOfSize:12.0f]];
+//    [botao addTarget:self action:@selector(search:) forControlEvents:UIControlEventTouchUpInside];
+//    
+//    [self.tableview.tableHeaderView addSubview:termo];
+//    [self.tableview.tableHeaderView addSubview:botao];
 //    [self.tableview.tableHeaderView addSubview:tipo];
     
 }
@@ -99,20 +102,26 @@
             [celula.nome setText:filme.nome];
             [celula.tipo setText:@"Filme"];
             [celula.genero setText:filme.genero];
+            [celula.artista setText: filme.artista];
             break;
         case 1:
             [celula.nome setText:musica.nome];
             [celula.tipo setText:@"Musica"];
             [celula.genero setText:musica.genero];
+            [celula.artista setText:musica.artista];
             break;
         case 2:
             [celula.nome setText:podcast.nome];
             [celula.tipo setText:@"Podcast"];
             [celula.genero setText:podcast.genero];
+            [celula.artista setText:podcast.artista];
+            break;
         case 3:
             [celula.nome setText:ebook.nome];
             [celula.tipo setText:@"eBook"];
             [celula.genero setText:ebook.genero];
+            [celula.artista setText:ebook.autor];
+            break;
     }
     
     return celula;

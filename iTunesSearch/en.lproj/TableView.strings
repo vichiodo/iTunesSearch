@@ -1,0 +1,6 @@
+
+/* Class = "UIButton"; normalTitle = "Procurar"; ObjectID = "Tk5-LE-2UP"; */
+"Tk5-LE-2UP.normalTitle" = "Search";
+
+/* Class = "UITextField"; placeholder = "O que voce quer procurar"; ObjectID = "wMH-9z-kJm"; */
+"wMH-9z-kJm.placeholder" = "What do you want to search?";

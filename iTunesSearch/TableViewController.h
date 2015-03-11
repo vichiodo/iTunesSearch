@@ -12,10 +12,10 @@
 
 
 @property (strong, nonatomic) IBOutlet UITableView *tableview;
-@property (nonatomic) UIButton* botao;
-@property (nonatomic) UITextField* termo;
-@property (nonatomic) NSString *texto;
-@property (nonatomic) UITableView *tipo;
+@property (weak, nonatomic) IBOutlet UITextField *termo;
+@property (weak, nonatomic) IBOutlet UIButton *procurar;
+@property (strong, nonatomic) NSString *texto;
+
 
 @end
 
