@@ -15,6 +15,7 @@
 @property (nonatomic) UIButton* botao;
 @property (nonatomic) UITextField* termo;
 @property (nonatomic) NSString *texto;
+@property (nonatomic) UITableView *tipo;
 
 @end
 
