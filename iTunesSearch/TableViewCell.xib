@@ -34,22 +34,42 @@
                             </mask>
                         </variation>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artista" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZH-x3-1zA">
+                        <rect key="frame" x="8" y="75" width="171" height="14"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="171" id="IKt-uw-SrD"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="171" id="T61-VJ-ggQ"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
+                        <color key="textColor" red="0.81568627450980391" green="0.0" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                        <nil key="highlightedColor"/>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="T61-VJ-ggQ"/>
+                            </mask>
+                        </variation>
+                        <variation key="heightClass=regular-widthClass=compact">
+                            <mask key="constraints">
+                                <include reference="T61-VJ-ggQ"/>
+                            </mask>
+                        </variation>
+                    </label>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Nome da Mídia" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="UIA-JU-luV">
                         <rect key="frame" x="8" y="8" width="284" height="20.5"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="344" id="AQ2-uY-Gb7"/>
+                            <constraint firstAttribute="width" constant="232" id="w4k-sa-mma"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                         <nil key="highlightedColor"/>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="AQ2-uY-Gb7"/>
+                                <exclude reference="w4k-sa-mma"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
-                                <include reference="AQ2-uY-Gb7"/>
+                                <include reference="w4k-sa-mma"/>
                             </mask>
                         </variation>
                     </label>
@@ -75,23 +95,22 @@
                             </mask>
                         </variation>
                     </imageView>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Artista" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MZH-x3-1zA">
-                        <rect key="frame" x="8" y="75" width="171" height="14"/>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Preco" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3bC-8q-a9Q">
+                        <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
                         <constraints>
-                            <constraint firstAttribute="width" constant="171" id="IKt-uw-SrD"/>
-                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="171" id="T61-VJ-ggQ"/>
+                            <constraint firstAttribute="width" constant="59" id="fhc-hH-jEU"/>
                         </constraints>
-                        <fontDescription key="fontDescription" name="HelveticaNeue" family="Helvetica Neue" pointSize="12"/>
-                        <color key="textColor" red="0.81568627450980391" green="0.0" blue="0.039215686274509803" alpha="1" colorSpace="calibratedRGB"/>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                         <nil key="highlightedColor"/>
                         <variation key="default">
                             <mask key="constraints">
-                                <exclude reference="T61-VJ-ggQ"/>
+                                <exclude reference="fhc-hH-jEU"/>
                             </mask>
                         </variation>
                         <variation key="heightClass=regular-widthClass=compact">
                             <mask key="constraints">
-                                <include reference="T61-VJ-ggQ"/>
+                                <include reference="fhc-hH-jEU"/>
                             </mask>
                         </variation>
                     </label>
@@ -100,37 +119,46 @@
                     <constraint firstItem="UIA-JU-luV" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="15" id="1fm-1n-hRI"/>
                     <constraint firstItem="MZH-x3-1zA" firstAttribute="leading" secondItem="UtK-mO-niZ" secondAttribute="trailing" constant="36" id="3SN-T9-KgQ"/>
                     <constraint firstItem="UtK-mO-niZ" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" id="CqR-Ar-WWG"/>
+                    <constraint firstItem="3bC-8q-a9Q" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="Mu9-nA-Ng6"/>
                     <constraint firstItem="MZH-x3-1zA" firstAttribute="top" secondItem="sQd-VB-NOD" secondAttribute="bottom" constant="8" id="Szn-Fq-fUZ"/>
                     <constraint firstItem="sQd-VB-NOD" firstAttribute="leading" secondItem="UtK-mO-niZ" secondAttribute="trailing" constant="36" id="ZC0-3a-dhY"/>
                     <constraint firstItem="UIA-JU-luV" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" id="Zbo-3v-t7b"/>
                     <constraint firstItem="UtK-mO-niZ" firstAttribute="top" secondItem="UIA-JU-luV" secondAttribute="bottom" constant="12.5" id="d4g-qS-IpG"/>
-                    <constraint firstItem="UIA-JU-luV" firstAttribute="trailing" secondItem="H2p-sc-9uM" secondAttribute="trailingMargin" id="ihJ-rb-9Jy"/>
+                    <constraint firstItem="3bC-8q-a9Q" firstAttribute="leading" secondItem="UIA-JU-luV" secondAttribute="trailing" constant="25" id="dWx-Ju-cyc"/>
                     <constraint firstItem="sQd-VB-NOD" firstAttribute="top" secondItem="UIA-JU-luV" secondAttribute="bottom" constant="12.5" id="x6I-bo-ucQ"/>
                 </constraints>
                 <variation key="default">
+                    <mask key="subviews">
+                        <exclude reference="3bC-8q-a9Q"/>
+                    </mask>
                     <mask key="constraints">
                         <exclude reference="1fm-1n-hRI"/>
                         <exclude reference="Zbo-3v-t7b"/>
-                        <exclude reference="ihJ-rb-9Jy"/>
                         <exclude reference="CqR-Ar-WWG"/>
                         <exclude reference="d4g-qS-IpG"/>
                         <exclude reference="ZC0-3a-dhY"/>
                         <exclude reference="x6I-bo-ucQ"/>
                         <exclude reference="3SN-T9-KgQ"/>
                         <exclude reference="Szn-Fq-fUZ"/>
+                        <exclude reference="Mu9-nA-Ng6"/>
+                        <exclude reference="dWx-Ju-cyc"/>
                     </mask>
                 </variation>
                 <variation key="heightClass=regular-widthClass=compact">
+                    <mask key="subviews">
+                        <include reference="3bC-8q-a9Q"/>
+                    </mask>
                     <mask key="constraints">
                         <include reference="1fm-1n-hRI"/>
                         <include reference="Zbo-3v-t7b"/>
-                        <include reference="ihJ-rb-9Jy"/>
                         <include reference="CqR-Ar-WWG"/>
                         <include reference="d4g-qS-IpG"/>
                         <include reference="ZC0-3a-dhY"/>
                         <include reference="x6I-bo-ucQ"/>
                         <include reference="3SN-T9-KgQ"/>
                         <include reference="Szn-Fq-fUZ"/>
+                        <include reference="Mu9-nA-Ng6"/>
+                        <include reference="dWx-Ju-cyc"/>
                     </mask>
                 </variation>
             </tableViewCellContentView>
@@ -138,6 +166,7 @@
                 <outlet property="artista" destination="MZH-x3-1zA" id="53U-fK-gaa"/>
                 <outlet property="genero" destination="sQd-VB-NOD" id="7ge-eC-oiT"/>
                 <outlet property="nome" destination="UIA-JU-luV" id="ubX-WX-gam"/>
+                <outlet property="preco" destination="3bC-8q-a9Q" id="cSU-qL-7Iu"/>
             </connections>
             <point key="canvasLocation" x="236.5" y="135.5"/>
         </tableViewCell>

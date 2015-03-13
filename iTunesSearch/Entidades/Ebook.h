@@ -15,4 +15,6 @@
 @property (nonatomic, strong) NSString *paginas;
 @property (nonatomic, strong) NSString *genero;
 @property (nonatomic, strong) NSString *pais;
+@property (nonatomic, strong) NSString *preco;
+
 @end
