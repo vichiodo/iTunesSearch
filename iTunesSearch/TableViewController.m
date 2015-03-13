@@ -28,9 +28,13 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    
     UINib *nib = [UINib nibWithNibName:@"TableViewCell" bundle:nil];
-    iTunesManager *itunes = [iTunesManager sharedInstance];
     [self.tableview registerNib:nib forCellReuseIdentifier:@"celulaPadrao"];
+    
+    
+//    iTunesManager *itunes = [iTunesManager sharedInstance];
+//    midias = [itunes buscarMidias:@"bee"];
     
 #warning Necessario para que a table view tenha um espaco em relacao ao topo, pois caso contrario o texto ficara atras da barra superior
 //    self.tableview.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableview.bounds.size.width, 100.0f)];
@@ -86,41 +90,47 @@
         case 3:
             return @"eBooks";
     }
-    return nil;
+    return @"tchau";
 }
 
 -(UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     TableViewCell *celula = [self.tableview dequeueReusableCellWithIdentifier:@"celulaPadrao"];
-    Filme *filme = [midias objectAtIndex:indexPath.row];
-    Musica *musica = [midias objectAtIndex:indexPath.row];
-    Podcast *podcast = [midias objectAtIndex:indexPath.row];
-    Ebook *ebook = [midias objectAtIndex:indexPath.row];
-
+    
+    tipos =[[NSArray alloc] initWithArray:[midias objectAtIndex:indexPath.section]];
+    
+    Filme *filme;
+    Musica *musica;
+    Podcast *podcast;
+    Ebook *ebook;
+    
+    long row = [indexPath row];
     
     switch (indexPath.section) {
         case 0:
+            filme =[tipos objectAtIndex:row];
             [celula.nome setText:filme.nome];
-            [celula.tipo setText:@"Filme"];
             [celula.genero setText:filme.genero];
             [celula.artista setText: filme.artista];
             break;
         case 1:
+            musica = [tipos objectAtIndex:row];
             [celula.nome setText:musica.nome];
-            [celula.tipo setText:@"Musica"];
             [celula.genero setText:musica.genero];
             [celula.artista setText:musica.artista];
             break;
         case 2:
+            podcast = [ tipos objectAtIndex:row];
             [celula.nome setText:podcast.nome];
-            [celula.tipo setText:@"Podcast"];
             [celula.genero setText:podcast.genero];
             [celula.artista setText:podcast.artista];
             break;
         case 3:
+            ebook = [tipos objectAtIndex:row];
             [celula.nome setText:ebook.nome];
-            [celula.tipo setText:@"eBook"];
             [celula.genero setText:ebook.genero];
             [celula.artista setText:ebook.autor];
+            break;
+        default:
             break;
     }
     
@@ -128,7 +138,7 @@
 }
 
 -(CGFloat)tableView:(UITableView *)tableView heightForRowAtIndexPath:(NSIndexPath *)indexPath {
-    return 70;
+    return 100;
 }
 
 
