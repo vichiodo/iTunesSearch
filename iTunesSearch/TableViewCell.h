@@ -15,6 +15,7 @@
 @property (weak, nonatomic) IBOutlet UILabel *midia;
 @property (weak, nonatomic) IBOutlet UILabel *artista;
 @property (weak, nonatomic) IBOutlet UILabel *preco;
+@property (weak, nonatomic) IBOutlet UIImageView *foto;
 
 
 @end

@@ -36,11 +36,19 @@ static bool isFirstAccess = YES;
     if (!termo) {
         termo = @"";
     }
+    NSError *error;
+    NSRegularExpression *regex = [NSRegularExpression regularExpressionWithPattern:@"^[ A-Z0-9a-z._%+-]{2,100}$" options:NSRegularExpressionCaseInsensitive error:&error];
+    
+    NSTextCheckingResult *match = [regex firstMatchInString:termo options:0 range:NSMakeRange(0, [termo length])];
+    if (!match) {
+        NSLog(@"Termo invalido!");
+    }
+    
     
     NSString *url = [NSString stringWithFormat:@"https://itunes.apple.com/search?term=%@&limit=200", termo];
     NSData *jsonData = [NSData dataWithContentsOfURL: [NSURL URLWithString:url]];
     
-    NSError *error;
+    
     NSDictionary *resultado = [NSJSONSerialization JSONObjectWithData:jsonData
                                                               options:NSJSONReadingMutableContainers
                                                                 error:&error];
@@ -70,6 +78,7 @@ static bool isFirstAccess = YES;
             [filme setDuracao:[item objectForKey:@"trackTimeMillis"]];
             [filme setGenero:[item objectForKey:@"primaryGenreName"]];
             [filme setPais:[item objectForKey:@"country"]];
+            [filme setFoto:[item objectForKey:@"artworkUrl100"]];
             [filmes addObject:filme];
             
         }
@@ -83,6 +92,7 @@ static bool isFirstAccess = YES;
             [musica setDuracao:[item objectForKey:@"trackTimeMillis"]];
             [musica setGenero:[item objectForKey:@"primaryGenreName"]];
             [musica setPais:[item objectForKey:@"country"]];
+            [musica setFoto:[item objectForKey:@"artworkUrl100"]];
             [musicas addObject:musica];
             
         }
@@ -96,6 +106,7 @@ static bool isFirstAccess = YES;
             [podcast setDuracao:[item objectForKey:@"trackTimeMillis"]];
             [podcast setGenero:[item objectForKey:@"primaryGenreName"]];
             [podcast setPais:[item objectForKey:@"country"]];
+            [podcast setFoto:[item objectForKey:@"artworkUrl100"]];
             [podcasts addObject:podcast];
             
         }
@@ -106,9 +117,10 @@ static bool isFirstAccess = YES;
             [ebook setTrackId:[item objectForKey:@"trackId"]];
             [ebook setAutor:[item objectForKey:@"artistName"]];
             [ebook setPreco:[item objectForKey:@"formattedPrice"]];
-            [ebook setPaginas:[item objectForKey:@"trackTimeMillis"]];
+            //[ebook setPaginas:[item objectForKey:@"trackTimeMillis"]];
             [ebook setGenero:[item objectForKey:@"primaryGenreName"]];
             [ebook setPais:[item objectForKey:@"country"]];
+            [ebook setFoto:[item objectForKey:@"artworkUrl100"]];
             [ebooks addObject:ebook];
             
         }

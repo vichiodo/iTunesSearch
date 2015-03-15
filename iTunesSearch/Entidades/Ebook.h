@@ -7,14 +7,11 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "Midias.h"
 
-@interface Ebook : NSObject
-@property (nonatomic, strong) NSString *nome;
-@property (nonatomic, strong) NSString *trackId;
-@property (nonatomic, strong) NSString *autor;
+@interface Ebook : Midias
 @property (nonatomic, strong) NSString *paginas;
-@property (nonatomic, strong) NSString *genero;
-@property (nonatomic, strong) NSString *pais;
-@property (nonatomic, strong) NSString *preco;
+@property (nonatomic, strong) NSString *autor;
+
 
 @end

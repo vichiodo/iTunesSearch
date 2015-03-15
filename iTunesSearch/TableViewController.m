@@ -13,10 +13,12 @@
 #import "Entidades/Musica.h"
 #import "Entidades/Podcast.h"
 #import "Entidades/Ebook.h"
+#import "DetalhesViewController.h"
 
 @interface TableViewController () {
     NSArray *midias;
     NSArray *tipos;
+    NSUserDefaults * ultimoTermo;
 }
 
 @end
@@ -33,10 +35,22 @@
     [self.tableview registerNib:nib forCellReuseIdentifier:@"celulaPadrao"];
     
     
+    ultimoTermo = [NSUserDefaults standardUserDefaults];
+    
+    if(ultimoTermo != 0){
+        iTunesManager *itunes = [iTunesManager sharedInstance];
+        NSString *novoTermo = [[ultimoTermo stringForKey:@"keyToLookupString"] stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+        midias = [itunes buscarMidias:novoTermo];
+    }
+//    else{
+//        iTunesManager *itunes = [iTunesManager sharedInstance];
+//        midias = [itunes buscarMidias:@"queen"];
+//    }
+    
 //    iTunesManager *itunes = [iTunesManager sharedInstance];
 //    midias = [itunes buscarMidias:@"bee"];
     
-#warning Necessario para que a table view tenha um espaco em relacao ao topo, pois caso contrario o texto ficara atras da barra superior
+//#warning Necessario para que a table view tenha um espaco em relacao ao topo, pois caso contrario o texto ficara atras da barra superior
 //    self.tableview.tableHeaderView = [[UIView alloc] initWithFrame:CGRectMake(0.0f, 0.0f, self.tableview.bounds.size.width, 100.0f)];
 //    
 //    
@@ -111,24 +125,32 @@
             [celula.nome setText:filme.nome];
             [celula.genero setText:filme.genero];
             [celula.artista setText: filme.artista];
+            [celula.foto setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:filme.foto]]]];
+            [celula.preco setText:filme.preco];
             break;
         case 1:
             musica = [tipos objectAtIndex:row];
             [celula.nome setText:musica.nome];
             [celula.genero setText:musica.genero];
             [celula.artista setText:musica.artista];
+            [celula.foto setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:musica.foto]]]];
+            [celula.preco setText:musica.preco];
             break;
         case 2:
             podcast = [ tipos objectAtIndex:row];
             [celula.nome setText:podcast.nome];
             [celula.genero setText:podcast.genero];
             [celula.artista setText:podcast.artista];
+            [celula.foto setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:podcast.foto]]]];
+            [celula.preco setText:podcast.preco];
             break;
         case 3:
             ebook = [tipos objectAtIndex:row];
             [celula.nome setText:ebook.nome];
             [celula.genero setText:ebook.genero];
             [celula.artista setText:ebook.autor];
+            [celula.foto setImage:[UIImage imageWithData:[NSData dataWithContentsOfURL:[NSURL URLWithString:ebook.foto]]]];
+            [celula.preco setText:ebook.preco];
             break;
         default:
             break;
@@ -145,9 +167,9 @@
 -(IBAction)search:(id)sender{
     iTunesManager *itunes = [iTunesManager sharedInstance];
     _texto = termo.text;
-    
-    
     _texto = [_texto stringByReplacingOccurrencesOfString:@" " withString:@"+"];
+    
+    
     
     midias = [itunes buscarMidias:_texto];
     
@@ -155,9 +177,18 @@
     
     [termo resignFirstResponder];
     
-    
+    [ultimoTermo setObject:termo.text forKey:@"keyToLookupString"];
 
 }
+
+//-(void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+//    DetalhesViewController *view = [[DetalhesViewController alloc]init];
+//    
+//    view.row = [indexPath row];
+//    view.section = [indexPath section];
+//    
+//    [self.navigationController pushViewController:view animated:YES];
+//}
 
 
 @end

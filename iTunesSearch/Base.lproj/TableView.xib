@@ -20,8 +20,18 @@
                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" translatesAutoresizingMaskIntoConstraints="NO" id="yhJ-i3-nPg">
                     <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                     <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                        <rect key="frame" x="-8" y="133" width="408" height="667"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="400" id="AXj-CQ-ao9"/>
+                    </constraints>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="AXj-CQ-ao9"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="AXj-CQ-ao9"/>
+                        </mask>
                     </variation>
                     <connections>
                         <outlet property="dataSource" destination="-1" id="yW1-kW-QUP"/>
@@ -33,16 +43,23 @@
                     <items>
                         <navigationItem title="iTuna" id="mia-6A-IMg"/>
                     </items>
-                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                        <rect key="frame" x="0.0" y="0.0" width="400" height="44"/>
-                    </variation>
                 </navigationBar>
                 <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="O que voce quer procurar?" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TtC-yk-39g">
                     <rect key="frame" x="0.0" y="-30" width="97" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="222" id="3kg-rd-bku"/>
+                    </constraints>
                     <fontDescription key="fontDescription" type="system" pointSize="14"/>
                     <textInputTraits key="textInputTraits"/>
-                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                        <rect key="frame" x="8" y="55" width="222" height="30"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="3kg-rd-bku"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="3kg-rd-bku"/>
+                        </mask>
                     </variation>
                     <connections>
                         <outlet property="delegate" destination="-1" id="t1x-Kh-P3J"/>
@@ -50,11 +67,21 @@
                 </textField>
                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M2Q-5w-cgS">
                     <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="59" id="fGw-24-4W3"/>
+                    </constraints>
                     <state key="normal" title="Procurar">
                         <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                     </state>
-                    <variation key="heightClass=regular-widthClass=compact" fixedFrame="YES">
-                        <rect key="frame" x="251" y="55" width="59" height="30"/>
+                    <variation key="default">
+                        <mask key="constraints">
+                            <exclude reference="fGw-24-4W3"/>
+                        </mask>
+                    </variation>
+                    <variation key="heightClass=regular-widthClass=compact">
+                        <mask key="constraints">
+                            <include reference="fGw-24-4W3"/>
+                        </mask>
                     </variation>
                     <connections>
                         <action selector="search:" destination="-1" eventType="touchUpInside" id="cQt-sV-NQw"/>
@@ -62,12 +89,38 @@
                 </button>
             </subviews>
             <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+            <constraints>
+                <constraint firstItem="yhJ-i3-nPg" firstAttribute="top" secondItem="M2Q-5w-cgS" secondAttribute="bottom" constant="48" id="7Oe-ha-iNz"/>
+                <constraint firstAttribute="trailing" secondItem="2wC-3r-enb" secondAttribute="trailing" id="8Ty-5J-3jP"/>
+                <constraint firstAttribute="bottom" secondItem="yhJ-i3-nPg" secondAttribute="bottom" id="9Kk-bA-ITK"/>
+                <constraint firstItem="2wC-3r-enb" firstAttribute="leading" secondItem="vai-Sw-iAJ" secondAttribute="leading" id="Cbo-p2-5Iw"/>
+                <constraint firstAttribute="trailing" secondItem="yhJ-i3-nPg" secondAttribute="trailing" id="Cip-hP-Eud"/>
+                <constraint firstItem="M2Q-5w-cgS" firstAttribute="leading" secondItem="TtC-yk-39g" secondAttribute="trailing" constant="21" id="DwC-w7-Zne"/>
+                <constraint firstItem="M2Q-5w-cgS" firstAttribute="top" secondItem="2wC-3r-enb" secondAttribute="bottom" constant="6" id="HPO-Fo-fGr"/>
+                <constraint firstItem="TtC-yk-39g" firstAttribute="top" secondItem="2wC-3r-enb" secondAttribute="bottom" constant="6" id="QU4-Z6-jvu"/>
+                <constraint firstItem="TtC-yk-39g" firstAttribute="leading" secondItem="vai-Sw-iAJ" secondAttribute="leading" constant="8" id="iDG-Jy-TgB"/>
+                <constraint firstItem="yhJ-i3-nPg" firstAttribute="leading" secondItem="vai-Sw-iAJ" secondAttribute="leading" id="rNn-EC-1cP"/>
+                <constraint firstItem="2wC-3r-enb" firstAttribute="top" secondItem="vai-Sw-iAJ" secondAttribute="top" constant="20" id="u2E-OA-DO6"/>
+            </constraints>
             <variation key="default">
                 <mask key="subviews">
                     <exclude reference="yhJ-i3-nPg"/>
                     <exclude reference="2wC-3r-enb"/>
                     <exclude reference="TtC-yk-39g"/>
                     <exclude reference="M2Q-5w-cgS"/>
+                </mask>
+                <mask key="constraints">
+                    <exclude reference="8Ty-5J-3jP"/>
+                    <exclude reference="Cbo-p2-5Iw"/>
+                    <exclude reference="u2E-OA-DO6"/>
+                    <exclude reference="QU4-Z6-jvu"/>
+                    <exclude reference="iDG-Jy-TgB"/>
+                    <exclude reference="7Oe-ha-iNz"/>
+                    <exclude reference="9Kk-bA-ITK"/>
+                    <exclude reference="Cip-hP-Eud"/>
+                    <exclude reference="rNn-EC-1cP"/>
+                    <exclude reference="DwC-w7-Zne"/>
+                    <exclude reference="HPO-Fo-fGr"/>
                 </mask>
             </variation>
             <variation key="heightClass=regular-widthClass=compact">
@@ -76,6 +129,19 @@
                     <include reference="2wC-3r-enb"/>
                     <include reference="TtC-yk-39g"/>
                     <include reference="M2Q-5w-cgS"/>
+                </mask>
+                <mask key="constraints">
+                    <include reference="8Ty-5J-3jP"/>
+                    <include reference="Cbo-p2-5Iw"/>
+                    <include reference="u2E-OA-DO6"/>
+                    <include reference="QU4-Z6-jvu"/>
+                    <include reference="iDG-Jy-TgB"/>
+                    <include reference="7Oe-ha-iNz"/>
+                    <include reference="9Kk-bA-ITK"/>
+                    <include reference="Cip-hP-Eud"/>
+                    <include reference="rNn-EC-1cP"/>
+                    <include reference="DwC-w7-Zne"/>
+                    <include reference="HPO-Fo-fGr"/>
                 </mask>
             </variation>
             <point key="canvasLocation" x="621" y="-345"/>
